@@ -29,7 +29,7 @@ function ResponsiveNoticeBoard() {
         <Typography variant="h6" component="div">
           We are providing internship programme for new beginners in IT sector.{' '}
           <Button
-            href="https://webhouse.co.in/internship-programme"
+            href="/apply"
             target="_blank"
             sx={{ backgroundColor: '#1976d2', color: '#fff' }}
           >

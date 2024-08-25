@@ -1,6 +1,9 @@
 import React from 'react';
 import { Container, Grid, Typography, Breadcrumbs, Link, Button, Box, Card, CardMedia, CardContent, CardActions } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import grocery from '../../img/goeasy.png'
+import sizzi from '../../img/sailingdreamz.png'
+import maruti from '../../img/marutisales.png'
 
 const PortfolioPage = () => {
   return (
@@ -10,7 +13,7 @@ const PortfolioPage = () => {
  
         <Grid item xs={12} md={5} mt={3}>
           <Breadcrumbs aria-label="breadcrumb">
-            <Link color="inherit" href="https://webhouse.co.in/home">
+            <Link color="inherit" href="/">
               Home
             </Link>
             <Typography color="textPrimary">Portfolio</Typography>
@@ -30,7 +33,7 @@ const PortfolioPage = () => {
                 component="img"
                 alt="GO EASY DAY"
                 height="140"
-                image="https://webhouse.co.in/assets/img/goeasy.png"
+                image={grocery}
               />
               <CardContent>
                 <Typography variant="h5" component="div">
@@ -51,7 +54,7 @@ const PortfolioPage = () => {
                 component="img"
                 alt="SailingDreamz"
                 height="140"
-                image="https://webhouse.co.in/assets/img/sailingdreamz.png"
+                image={sizzi}
               />
               <CardContent>
                 <Typography variant="h5" component="div">
@@ -72,7 +75,7 @@ const PortfolioPage = () => {
                 component="img"
                 alt="Maruti Sales"
                 height="140"
-                image="https://webhouse.co.in/assets/img/marutisales.png"
+                image={maruti}
               />
               <CardContent>
                 <Typography variant="h5" component="div">

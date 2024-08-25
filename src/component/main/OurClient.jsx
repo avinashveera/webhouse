@@ -1,24 +1,30 @@
 import React from 'react';
 import { Box, Typography, Grid, Avatar, Container } from '@mui/material';
+import customer1 from '../../img/customer-1.png'
+import customer2 from '../../img/customer-2.png'
+import customer3 from '../../img/customer-3.png'
+import customer4 from '../../img/customer-4.png'
+import customer5 from '../../img/customer-5.png'
+import customer6 from '../../img/customer-6.png'
 
 const clients = [
   {
-    img: 'https://webhouse.co.in/assets/img/customer-1.png',
+    img: customer1,
   },
   {
-    img: 'https://webhouse.co.in/assets/img/customer-2.png',
+    img: customer2,
   },
   {
-    img: 'https://webhouse.co.in/assets/img/customer-3.png',
+    img: customer3,
   },
   {
-    img: 'https://webhouse.co.in/assets/img/customer-4.png',
+    img: customer4,
   },
   {
-    img: 'https://webhouse.co.in/assets/img/customer-5.png',
+    img: customer5,
   },
   {
-    img: 'https://webhouse.co.in/assets/img/customer-6.png',
+    img: customer6,
   },
 ];
 

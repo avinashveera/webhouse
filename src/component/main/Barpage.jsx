@@ -1,12 +1,13 @@
 import React from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
 import { Code } from '@mui/icons-material';
+import bgfix from '../../img/fixed-background-2.jpg'
 
 function BarPage() {
   return (
     <Box
       sx={{
-        backgroundImage: `url('https://webhouse.co.in/assets/img/fixed-background-2.jpg')`,
+        backgroundImage: `url(${bgfix})`,
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -40,7 +41,7 @@ function BarPage() {
         </Typography>
         <Button
           variant="contained"
-          href="https://webhouse.co.in/contact-us"
+          href="/contact"
           sx={{
             backgroundColor: 'black',
             color: 'white',

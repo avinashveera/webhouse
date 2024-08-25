@@ -1,5 +1,5 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Grid,ListItemIcon, List, ListItem, ListItemText, Divider ,Button,TextField} from '@mui/material';
+import React, { useState } from 'react';
+import { CircularProgress, Snackbar, Alert, AppBar, Toolbar, Typography, IconButton, Grid,ListItemIcon, List, ListItem, ListItemText, Divider ,Button,TextField} from '@mui/material';
 import { Facebook, Instagram, YouTube, Phone, WhatsApp } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
@@ -13,9 +13,65 @@ import BuildIcon from '@mui/icons-material/Build';
 import EmailIcon from '@mui/icons-material/Email';
 import imag1 from '../../img/logo.png';
 
+import emailjs from 'emailjs-com';
+
 const Footer = () => {
+
+  const [formData, setFormData] = useState({
+      email: '',
+    message: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertSeverity, setAlertSeverity] = useState('success');
+
+
+  const  handleChange = async (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+
+    try {
+      const serviceID = 'service_9o8yn7s'; // Replace with your EmailJS Service ID
+      const templateID = 'template_vv7fk0i'; // Replace with your EmailJS Template ID
+      const userID = 'iIlrYyaLgrPbhzCNp'; // Replace with your EmailJS User ID
+
+      const templateParams = {
+        email: formData.email,
+        message: formData.message
+
+      };
+
+      await emailjs.send(serviceID, templateID, templateParams, userID);
+
+      setAlertMessage('messege submitted successfully!');
+      setAlertSeverity('success');
+      setFormData({
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      setAlertMessage(error.message || 'An error occurred.');
+      setAlertSeverity('error');
+    } finally {
+      setLoading(false);
+      setOpen(true);
+    }
+  };
+
+
+
+
   return (
-    <AppBar position="static" xs={12} sm={6} md={3} style={{ padding: '20px', backgroundColor: '#f5f5f5', color: '#2F4F4F' }}>
+    <AppBar position="static" xs={12} sm={6} md={3} style={{ padding: '20px', backgroundColor: '#f5f5f5', color: '#2F4F4F', marginTop:"50px"}}>
       <Toolbar>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
@@ -139,18 +195,36 @@ const Footer = () => {
       <EmailIcon /> Mail Us
     </IconButton>
 
-            <form>
-              <TextField label="Enter an Email" variant="outlined" fullWidth style={{ marginBottom: '10px' }} />
-              <TextField
-                label="Write Message..."
-                variant="outlined"
-                multiline
-                rows={4}
-                fullWidth
-                style={{ marginBottom: '10px' }}
-              />
-              <Button variant="contained" color="primary">Send</Button>
-            </form>
+            <form onSubmit={handleFormSubmit}>
+          <TextField
+            name="email"
+            label="Enter an Email"
+            variant="outlined"
+            onChange={handleChange}
+            fullWidth
+            style={{ marginBottom: '10px' }}
+            required
+          />
+          <TextField
+            name="message"
+            label="Write Message..."
+            variant="outlined"
+            multiline
+            rows={4}
+            onChange={handleChange}
+            fullWidth
+            style={{ marginBottom: '10px' }}
+            required
+          />
+          <Button variant="contained" color="primary" type="submit" disabled={loading}>
+            {loading ? <CircularProgress size={24} /> : 'Send'}
+          </Button>
+        </form>
+          <Snackbar open={open} autoHideDuration={6000} onClose={() => setOpen(false)}>
+        <Alert onClose={() => setOpen(false)} severity={alertSeverity} sx={{ width: '100%' }}>
+          {alertMessage}
+        </Alert>
+      </Snackbar>
 
           </Grid>
         </Grid>

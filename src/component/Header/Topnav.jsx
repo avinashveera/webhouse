@@ -35,10 +35,10 @@ const TopNav = () => {
               
               {/* Login and Signup Links */}
               
-                <Link href="#" sx={{ marginLeft: 2, display: 'flex', alignItems: 'center',textDecoration:"none" }} data-toggle="modal" data-target="#login-modal">
+                <Link href="/login" sx={{ marginLeft: 2, display: 'flex', alignItems: 'center',textDecoration:"none" }} data-toggle="modal" data-target="#login-modal">
                   <ExitToAppIcon fontSize="small" /> <span>Sign in</span>
                 </Link>
-                <Link href="https://webhouse.co.in/register" sx={{ marginLeft: 2, display: 'flex',textDecoration:"none", alignItems: 'center' }}>
+                <Link href="/signup" sx={{ marginLeft: 2, display: 'flex',textDecoration:"none", alignItems: 'center' }}>
                   <PersonIcon fontSize="small" /> <span>Sign up</span>
                 </Link>
             

@@ -2,30 +2,35 @@ import React from 'react';
 import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Carousel styles
+import slider1 from '../../img/webhouse-software-development-company-image.png'
+import slider2 from '../../img/webhouse-software-development-company-image-slider-2.png'
+import slider3 from '../../img/webhouse-software-development-company-image-slider-1.png'
+import slider4 from '../../img/webhouse-software-development-company-image-slider.png'
+import background from '../../img/background.jpg'
 
 const slides = [
   {
-    img: 'https://webhouse.co.in/assets/img/webhouse-software-development-company-image.png',
+    img:slider1,
     heading: 'Responsive Website',
     text: 'Business. Corporate. Agency.\nPortfolio. Blog. E-commerce.',
   },
   {
-    img: 'https://webhouse.co.in/assets/img/webhouse-software-development-company-image-slider-1.png',
+    img: slider3,
     heading: 'Internship Programme',
     text: 'Training\nPractice\nJob',
   },
   {
-    img: 'https://webhouse.co.in/assets/img/webhouse-software-development-company-image-slider.png',
+    img: slider4,
     heading: 'Our Services',
     text: 'Apps Development\nSEO Marketing\nSMS Marketing\nE-commerce',
   },
   {
-    img: 'https://webhouse.co.in/assets/img/webhouse-software-development-company-image-slider-2.png',
+    img:slider2,
     heading: 'Design',
     text: 'Clean and elegant design\nFull width and boxed mode\nEasily readable Roboto font and awesome icons\nPre-prepared colour variations',
   },
   {
-    img: 'https://webhouse.co.in/assets/img/webhouse-software-development-company-image-slider-1.png',
+    img: slider3,
     heading: 'Easy to Customize',
     text: 'Pre-prepared colour variations.\nEasily to change fonts',
   },
@@ -49,7 +54,7 @@ function ResponsiveCarousel() {
           sx={{
             position: 'relative',
             height: '400px', // Adjust height as needed
-            backgroundImage: `url(https://static.vecteezy.com/system/resources/previews/036/136/586/non_2x/ai-generated-3d-technology-background-free-photo.jpg)`,
+            backgroundImage: `url(${background})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

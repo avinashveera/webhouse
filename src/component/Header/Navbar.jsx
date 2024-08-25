@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{mb:"10px"}}>
       <Toolbar>
         <Box sx={{ flexGrow: 1, marginRight: '50px' }}>
           <Typography>
@@ -75,11 +75,12 @@ const Navbar = () => {
                 open={Boolean(servicesAnchorEl)}
                 onClose={handleServicesClose}
               >
-                <MenuItem onClick={handleServicesClose} component={Link} to="/seo-internet-marketing">SEO And Internet Marketing</MenuItem>
-                <MenuItem onClick={handleServicesClose} component={Link} to="/website-development">Website Development</MenuItem>
-                <MenuItem onClick={handleServicesClose} component={Link} to="/website-design">Website Design</MenuItem>
+                
+                <MenuItem onClick={handleServicesClose} component={Link} to="/marketing">SEO And Internet Marketing</MenuItem>
+                <MenuItem onClick={handleServicesClose} component={Link} to="/webdevelopment">Website Development</MenuItem>
+                <MenuItem onClick={handleServicesClose} component={Link} to="/webdesign">Website Design</MenuItem>
                 <MenuItem onClick={handleServicesClose} component={Link} to="/ecommerce">Ecommerce Development</MenuItem>
-                <MenuItem onClick={handleServicesClose} component={Link} to="/mobile-development">Mobile Development</MenuItem>
+                <MenuItem onClick={handleServicesClose} component={Link} to="/android">Mobile Development</MenuItem>
               </Menu>
               <MenuItem onClick={handleMobileMenuClose} component={Link} to="/portfolio">Portfolio</MenuItem>
               <MenuItem onClick={handleMobileMenuClose} component={Link} to="/clients">Clients</MenuItem>
@@ -102,11 +103,11 @@ const Navbar = () => {
               open={Boolean(servicesAnchorEl)}
               onClose={handleServicesClose}
             >
-              <MenuItem onClick={handleServicesClose} component={Link} to="/seo-internet-marketing">SEO And Internet Marketing</MenuItem>
-              <MenuItem onClick={handleServicesClose} component={Link} to="/website-development">Website Development</MenuItem>
-              <MenuItem onClick={handleServicesClose} component={Link} to="/website-design">Website Design</MenuItem>
+              <MenuItem onClick={handleServicesClose} component={Link} to="/marketing">SEO And Internet Marketing</MenuItem>
+              <MenuItem onClick={handleServicesClose} component={Link} to="/webdevelopment">Website Development</MenuItem>
+              <MenuItem onClick={handleServicesClose} component={Link} to="/webdesign">Website Design</MenuItem>
               <MenuItem onClick={handleServicesClose} component={Link} to="/ecommerce">Ecommerce Development</MenuItem>
-              <MenuItem onClick={handleServicesClose} component={Link} to="/mobile-development">Mobile Development</MenuItem>
+              <MenuItem onClick={handleServicesClose} component={Link} to="/android">Mobile Development</MenuItem>
             </Menu>
             <Button color="inherit" component={Link} to="/portfolio">Portfolio</Button>
             <Button color="inherit" component={Link} to="/clients">Clients</Button>

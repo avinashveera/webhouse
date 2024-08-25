@@ -12,6 +12,19 @@ import Career from './pages/Career';
 import Contact from './pages/Contact'
 
 
+import Marketing from './pages/services/DigitalMarket'
+import Webdesign from './pages/services/WebDesign'
+import Webdevlopment from './pages/services/WebDevlopment'
+import Android from './pages/services/Mobile'
+import Ecommerce from './pages/services/Ecommerce'
+
+
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
+import Otp from './pages/auth/Otp';
+import ForgotPassword from './pages/auth/Forgetpass';
+import ApplyNow from './pages/Apply';
+
 function App() {
   return (
     
@@ -26,6 +39,24 @@ function App() {
          <Route path='/clients' element={<ClientComponent />}/>
          <Route path='/career' element={<Career />}/>
          <Route path='/contact' element={<Contact />}/>
+         <Route path='/apply' element={<ApplyNow />}/>
+
+         {/* //sercices pages */}
+
+         <Route path='/marketing' element={<Marketing />}/>
+         <Route path='/webdesign' element={<Webdesign />}/>
+         <Route path='/webdevelopment' element={<Webdevlopment />}/>
+         <Route path='/ecommerce' element={<Ecommerce />}/>
+         <Route path='/android' element={<Android />}/>
+
+
+         {/* //auth pages */}
+
+         <Route path='/login' element={<Login />}/>
+         <Route path='/signup' element={<Signup />}/>
+         <Route path='/forgotpassword' element={<ForgotPassword />}/>
+         <Route path='/otp' element={<Otp />}/>
+       
         
       </Routes>
       

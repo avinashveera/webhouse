@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import ourteam from '../../img/our-team.jpg';
 
 const ResponsiveAccordion = () => {
   return (
@@ -26,7 +27,7 @@ const ResponsiveAccordion = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
               <img 
-                src="https://webhouse.co.in/assets/img/our-team.jpg" 
+                src={ourteam} 
                 alt="Our Team" 
                 style={{ width: '100%', height: 'auto', borderRadius: '8px', marginBottom: '15px' }} 
               />
